@@ -60,9 +60,17 @@ vue-travel/          --> 项目根目录
   README.md      --> 项目说明文件
 ```
 
-# 引入reset.css
+## 引入reset.css和fastClick
+
+# 使用Less进行样式编写
+
+# 首页header编写
+
 
 # 问题集
 
 1. 移动端1像素边框问题？引入border.css
 2. 移动端，300ms点击延迟？ 引入fastclick
+3. inline-block，间距空白问题？
+4. Css导入变量，使用`~@`表示src目录
+5. 使用webpack别名，修改`alias`字段就可以
