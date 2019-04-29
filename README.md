@@ -30,3 +30,39 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 2. 创建基于webpack模板的新项目`vue init webpack vue-travel`【需要在vue-travel的上一层目录上输入该命令】,填入项目初始的相关信息。
 
     ![](https://image-static.segmentfault.com/345/379/3453798512-5cc6e29366623_articlex)
+
+3. 项目目录结构
+```
+vue-travel/          --> 项目根目录
+  build/         --> webpack项目构建打包的配置内容
+  config/        --> 存放项目配置文件
+    dev.env.js   --> 开发环境下的配置
+    index.js     --> 基本配置信息
+    prod.env.js  --> 线上环境下的配置
+  src/           --> 存放项目源文件，进行业务代码的开发
+    assets       --> 项目用到图片类资源
+    router       --> 所有的项目路由
+      index.js   --> 路由存放在index.js
+    components   --> 存放项目使用到组件
+    App.vue      --> 项目最原始的根组件
+    main.js      --> 整个项目的入口文件
+  node_modules/  --> 存放第三方模块
+  static/        --> 存放静态资源文件
+  routes/        --> 存放路由文件
+  index.html     --> 默认首页模板文件
+  .babelrc       --> 语法转换配置，让浏览器能识别
+  .postcssrc.js  --> postcss的配置项
+  .editorconfig  --> 编辑器配置项
+  .eslintrc      --> 代码检测
+  .gitignore     --> Git忽略文件
+  LICENSE        --> 项目许可文件
+  package.json   --> NPM包管理文件
+  README.md      --> 项目说明文件
+```
+
+# 引入reset.css
+
+# 问题集
+
+1. 移动端1像素边框问题？引入border.css
+2. 移动端，300ms点击延迟？ 引入fastclick
