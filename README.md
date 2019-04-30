@@ -74,6 +74,10 @@ vue-travel/          --> 项目根目录
 
 # ajax获取首页数据
 - static模拟数据，只有static目录下是可以被外部访问到
+
+# 城市选择页面
+
+
 # 问题集
 
 1. 移动端1像素边框问题？引入border.css
@@ -87,3 +91,4 @@ vue-travel/          --> 项目根目录
 9. 长段落省略号？ overflow:hidden;white-space: nowrap;text-overflow: ellipsis;
 10. 请求转发？vue-cli的config的proxyTable选项
 11. 轮播图刷新显示最后一张问题？ 使用v-if判断是否有数据，有数据才渲染
+12. export default导出的到底是什么，模块化工程？？ 学习中
