@@ -68,6 +68,12 @@ vue-travel/          --> 项目根目录
 
 # 首页轮播图
 
+# 首页图标栏
+
+# 首页推荐列表和周末去哪儿
+
+# ajax获取首页数据
+- static模拟数据，只有static目录下是可以被外部访问到
 # 问题集
 
 1. 移动端1像素边框问题？引入border.css
@@ -79,3 +85,5 @@ vue-travel/          --> 项目根目录
 7. Vue中scoped穿透问题？ stylus使用>>>,sass和less使用/deep/
 8. 为什么v-for不要使用index作为key值
 9. 长段落省略号？ overflow:hidden;white-space: nowrap;text-overflow: ellipsis;
+10. 请求转发？vue-cli的config的proxyTable选项
+11. 轮播图刷新显示最后一张问题？ 使用v-if判断是否有数据，有数据才渲染

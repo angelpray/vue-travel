@@ -2,7 +2,7 @@
   <div>
     <div class="title">周末去哪儿</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
           <div class="item-img-wrapper">
             <img :src="item.imgUrl" class="item-img" alt="">
           </div>
@@ -18,30 +18,8 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data() {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg',
-        title: '故宫',
-        desc: '世界宫殿建筑典范'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg',
-        title: '故宫',
-        desc: '世界宫殿建筑典范'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg',
-        title: '故宫',
-        desc: '世界宫殿建筑典范'
-      }, {
-        id: '0004',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg',
-        title: '故宫',
-        desc: '世界宫殿建筑典范'
-      }]
-    };
+  props: {
+    list: Array
   }
 };
 </script>
@@ -49,13 +27,12 @@ export default {
 <style lang="less" scoped>
   @import '~styles/mixins.less';
   .title {
-    margin-top: .2rem;
     line-height: .8rem;
     background: #eee;
     text-indent: .2rem;
   }
   .item-img-wrapper {
-    height: 33.9vw;
+    height: 37.09vw;
     overflow: hidden;
     .item-img {
       width: 100%;
