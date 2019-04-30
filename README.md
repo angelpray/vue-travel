@@ -66,11 +66,14 @@ vue-travel/          --> 项目根目录
 
 # 首页header编写
 
+# 首页轮播图
 
 # 问题集
 
 1. 移动端1像素边框问题？引入border.css
 2. 移动端，300ms点击延迟？ 引入fastclick
-3. inline-block，间距空白问题？
-4. Css导入变量，使用`~@`表示src目录
-5. 使用webpack别名，修改`alias`字段就可以
+3. inline-block，间距空白问题？ 父元素font-size=0，子元素重新设置font-size即可
+4. Css导入变量？ 使用`~@`表示src目录
+5. 使用webpack别名？ 修改`alias`字段就可以
+6. 轮播图加载抖动问题？
+7. Vue中scoped穿透问题？ stylus使用>>>,sass和less使用/deep/
