@@ -77,3 +77,5 @@ vue-travel/          --> 项目根目录
 5. 使用webpack别名？ 修改`alias`字段就可以
 6. 轮播图加载抖动问题？
 7. Vue中scoped穿透问题？ stylus使用>>>,sass和less使用/deep/
+8. 为什么v-for不要使用index作为key值
+9. 长段落省略号？ overflow:hidden;white-space: nowrap;text-overflow: ellipsis;
