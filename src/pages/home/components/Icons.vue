@@ -73,36 +73,39 @@ export default {
   .icons /deep/ .swiper-container {
     height: 50vw;
   }
-  .icon {
-    position: relative;
-    overflow: hidden;
-    float: left;
-    width: 25%;
-    padding-bottom: 25%;
-    .icon-img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: .44rem;
-      box-sizing: border-box;
-      padding: .1rem;
-      .icon-img-content {
-        display: block;
-        margin: 0 auto;
-        height: 100%;
+  .icons {
+    margin-top: .1rem;
+    .icon {
+      position: relative;
+      overflow: hidden;
+      float: left;
+      width: 25%;
+      padding-bottom: 25%;
+      .icon-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: .44rem;
+        box-sizing: border-box;
+        padding: .1rem;
+        .icon-img-content {
+          display: block;
+          margin: 0 auto;
+          height: 100%;
+        }
       }
-    }
-    .icon-desc {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: .44rem;
-      line-height: .44rem;
-      color: @darkTextColor;
-      text-align: center;
-      .ellipsis();
+      .icon-desc {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: .44rem;
+        line-height: .44rem;
+        color: @darkTextColor;
+        text-align: center;
+        .ellipsis();
+      }
     }
   }
 </style>
