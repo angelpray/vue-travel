@@ -15,6 +15,7 @@ import HomeSwiper from './components/Swiper';
 import HomeIcons from './components/Icons';
 import HomeRecommend from './components/Recommend';
 import HomeWeekend from './components/Weekend';
+import { mapState } from 'vuex';
 
 export default {
   name: 'Home',
@@ -27,15 +28,19 @@ export default {
   },
   data() {
     return {
+      lastCity: '',
       swiperList: [],
       iconList: [],
       recommendList: [],
       weekendList: []
     };
   },
+  computed: {
+    ...mapState(['city'])
+  },
   methods: {
     getHomeInfo() {
-      axios.get('/api/index.json')
+      axios.get(`/api/index.json?city=${this.city}`)
         .then(this.getHomeInfoSucc);
     },
     getHomeInfoSucc(res) {
@@ -49,7 +54,15 @@ export default {
     }
   },
   mounted() {
+    this.lastCity = this.city;
     this.getHomeInfo();
+  },
+  // 使用了keep-alive有新的生命周期函数，当页面重新被显示就会执行
+  activated() {
+   if (this.lastCity !==  this.city) {
+     this.lastCity = this.city;
+     this.getHomeInfo();
+   }
   },
 };
 </script>

@@ -93,6 +93,10 @@ vue-travel/          --> 项目根目录
 
 - vuex数据框架
 - Vuex的高级使用和localStorage【HTML5新API，提供类似cookie的功能，本地存储】
+
+# 使用keep-alive优化网页性能
+- 每次切换路由都会重新渲染，重新发起http请求。
+
 # 问题集
 
 1. 移动端1像素边框问题？引入border.css
