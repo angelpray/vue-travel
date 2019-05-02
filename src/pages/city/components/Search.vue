@@ -8,7 +8,8 @@
         <li
           v-for="item of list"
           class="search-item border-bottom"
-          :key="item.id "
+          :key="item.id"
+          @click="handleCityClick(item.name)"
         >
           {{item.name}}
         </li>
@@ -22,6 +23,7 @@
 
 <script>
 import Bscroll from 'better-scroll';
+import { mapMutations } from 'vuex';
 
 export default {
   name: 'CitySearch',
@@ -35,10 +37,17 @@ export default {
       timer: null
     };
   },
+  methods: {
+    handleCityClick(city) {
+      this.changeCity(city);
+      this.$router.push('/');
+    },
+    ...mapMutations(['changeCity'])
+  },
   computed: {
     hasNoData() {
-      // 必须判断keyword长度，否则会出现“数据没有找到”的闪烁
-      return !this.list.length && this.keyword.length > 1;
+      return !this.list.length && this.keyword.length > 1 ||
+       !this.list.length && Number(this.keyword);
     }
   },
   watch: {
@@ -50,6 +59,7 @@ export default {
         this.list = [];
         return;
       }
+      console.log(!Number(this.keyword));
       this.timer = setTimeout(() => {
         const result = [];
         for (let i in this.cities) {

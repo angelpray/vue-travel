@@ -89,7 +89,10 @@ vue-travel/          --> 项目根目录
 
 # 搜索功能逻辑实现
 
+# 城市状态vuex
 
+- vuex数据框架
+- Vuex的高级使用和localStorage【HTML5新API，提供类似cookie的功能，本地存储】
 # 问题集
 
 1. 移动端1像素边框问题？引入border.css

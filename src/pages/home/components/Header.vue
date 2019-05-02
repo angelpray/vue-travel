@@ -3,7 +3,8 @@
     <div class="header-left"><div class="iconfont back-icon">&#xe624;</div></div>
     <div class="header-input"><span class="iconfont">&#xe632;输入景点</span></div>
     <router-link to="/city">
-      <div class="header-right">{{this.city}}
+      <div class="header-right">
+        {{this.city}}
         <span class="iconfont arrow-icon">&#xe64a;</span>
       </div>
     </router-link>
@@ -11,16 +12,21 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'HomeHeader',
-  props: {
-    city: String
-  }
+  computed: {
+    // 映射出city计算属性
+    ...mapState({
+      city: 'city'
+    })
+  },
 };
 </script>
 
 <style lang="less" scoped>
   @import '~styles/variables.less';
+  @import '~styles/mixins.less';
   .header {
     display: flex;
     line-height: @headerHeight;
@@ -46,7 +52,8 @@ export default {
     }
     .header-right {
       color: #fff;
-      width: 1.24rem;
+      min-width: 1.24rem;
+      padding: 0 .1rem;
       float: right;
       text-align: center;
       .arrow-icon {
