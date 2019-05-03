@@ -6,5 +6,6 @@ try {
 } catch (e) { throw e; }
 
 export default {
-  city: defaultCity
+  city: defaultCity,
+  lastId: '0001'
 };

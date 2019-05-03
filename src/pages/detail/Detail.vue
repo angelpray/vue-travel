@@ -14,11 +14,12 @@
 </template>
 
 <script>
+import axios from 'axios';
 import DetailBanner from './components/Banner';
 import DetailHeader from './components/Header';
 import DetailList from './components/List';
-import axios from 'axios';
-
+import { mapState } from 'vuex';
+import { mapMutations } from 'vuex';
 export default {
   name: 'Detail',
   components: {
@@ -26,12 +27,16 @@ export default {
     DetailHeader,
     DetailList
   },
+  computed: {
+    ...mapState(['lastId'])
+  },
   data() {
     return {
       sightName: '',
       bannerImg: '',
       galleryImgs: [],
-      list: []
+      list: [],
+      id: ''
     }
   },
   methods: {
@@ -52,10 +57,18 @@ export default {
         this.galleryImgs = data.galleryImgs;
         this.list = data.categoryList;
       }
-    }
+    },
+    ...mapMutations(['changeId'])
   },
   mounted() {
     this.getDetailInfo();
+  },
+  activated() {
+    this.id = this.$route.params.id;
+    if (this.lastId !== this.id) {
+      this.changeId(this.id);
+      this.getDetailInfo();
+    }
   }
 };
 </script>

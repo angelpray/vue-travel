@@ -123,7 +123,12 @@ vue-travel/          --> 项目根目录
 14. 为什么要对全局事件进行解绑？组件内部绑定事件没影响，但如果是使用window对象进行绑定就会影响其他的组件。使用`deactived周期函数`【keep-alive特有生命周期函数】解决，当页面即将被替换成新页面时触发。
 15. 什么是递归组件？学习中
 16. 如何获得动态路由的参数？ 在请求url的时候增加查询参数`?name= + this.$route.params.id`
-17. 进入页面重新发送ajax请求，而不是缓存起来？`使用actived`或者让某个组件不使用keep-alive
+17. 进入页面重新发送ajax请求，而不是缓存起来？`结合mounted使用actived`或者让某个组件不使用keep-alive【请注意，如果取消了keep-alive，则以往使用的actived函数会失效，因为actived只有在keep-alive的时候才存在】
+```
+<keep-alive exclude="Detail">
+  <router-view/>
+</keep-alive>
+```
 18. 每一个组件里面的name值到底有什么用？ 1. 递归组件需要使用本身名字；2. 取消keep-alive缓存； 3.devtool里面的组件名
 19. 组件之间的滚动条会互相影响问题？
 ```js
