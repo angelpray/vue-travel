@@ -34,6 +34,7 @@ export default {
   },
   methods: {
     handleScroll() {
+      console.log('scroll');
       const top = document.documentElement.scrollTop
       if (top > 50) {
         let opacity = top / 130;
@@ -48,6 +49,10 @@ export default {
   activated() {
     window.addEventListener('scroll', this.handleScroll);
   },
+  // 当页面即将被替换成新页面时触发
+  deactivated() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
 }
 </script>
 
